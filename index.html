@@ -5,36 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <div class="cont">
-        <nav class="nav">
+        <nav class="flex-cont nav">
             <img src="https://picsum.photos/100" alt="logo" class="nav-img">
-            <ul class="link-cont">
-                <li class="nav-link-item"><a href="https://picsum.photos/200/300">Home</a></li>
-                <li class="nav-link-item"><a href="https://picsum.photos/200/300">Game list</a></li>
-                <li class="nav-link-item"><a href="https://picsum.photos/200/300">Contact</a></li>
-                <li class="nav-link-item"><a href="https://picsum.photos/200/300">FAQ</a></li>
+            <button id="button">drop</button>
+            <ul class="flex-cont link-cont" id="dropdown">
+                <li class="link-item"><a href="https://picsum.photos/200/300">Home</a></li>
+                <li class="link-item"><a href="https://picsum.photos/200/300">Game list</a></li>
+                <li class="link-item"><a href="https://picsum.photos/200/300">Contact</a></li>
+                <li class="link-item"><a href="https://picsum.photos/200/300">FAQ</a></li>
             </ul>
         </nav>
-        <main class="main-container">
-            <section>
+        <main class="main-cont">
+            <section class="action-cont">
                 <div class="slidehero-cont">
                     <h1>New game</h1>
-                    <button>call to action</button>
+                    <button>View More</button>
                 </div>
             </section>
-            <section>
-                <div class="game-list-cont">
-                    <h2>Show More</h2>
-                    <ul class="game-list">
+            <section class="viewmore-cont">
+                <div class="game-list-cont" style="background-image: url()">
+                    <div>
+                        <h2>More Games</h2>
+                        <a href="place">
+                            <h4>Show More</h4>
+                        </a>
+                    </div>
+                    <ul class="flex-cont game-list">
                         <li class="game-item">
                             <a href="place">
                                 <img src="https://picsum.photos/200/300" alt="game" class="game-img">
                                 <h3>Game title</h3>
                                 <p>Game description</p>
-                                <button>More info</button>
                             </a>
                         </li>
                         <li class="game-item">
@@ -42,7 +47,6 @@
                                 <img src="https://picsum.photos/200/300" alt="game" class="game-img">
                                 <h3>Game title</h3>
                                 <p>Game description</p>
-                                <button>More info</button>
                             </a>
                         </li>
                         <li class="game-item">
@@ -50,7 +54,6 @@
                                 <img src="https://picsum.photos/200/300" alt="game" class="game-img">
                                 <h3>Game title</h3>
                                 <p>Game description</p>
-                                <button>More info</button>
                             </a>
                         </li>
                         <li class="game-item">
@@ -58,7 +61,6 @@
                                 <img src="https://picsum.photos/200/300" alt="game" class="game-img">
                                 <h3>Game title</h3>
                                 <p>Game description</p>
-                                <button>More info</button>
                             </a>
                         </li>
                         <li class="game-item">
@@ -66,38 +68,44 @@
                                 <img src="https://picsum.photos/200/300" alt="game" class="game-img">
                                 <h3>Game title</h3>
                                 <p>Game description</p>
-                                <button>More info</button>
                             </a>
                         </li>
+                        <!-- <span class="fl-grow"></span> -->
                     </ul>
                 </div>
             </section>
         </main>
-        <footer class="footer">
-            <ul class="social-container">
+        <footer class="flex-cont footer">
+            <ul class="flex-cont social-container">
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <img src="https://picsum.photos/200/300" alt="social">
+                        <h3>insta</h3>
                     </a>
                 </li>
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <img src="https://picsum.photos/200/300" alt="social">
+                        <h3>insta</h3>
                     </a>
                 </li>
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <img src="https://picsum.photos/200/300" alt="social">
+                        <h3>insta</h3>
                     </a>
                 </li>
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <img src="https://picsum.photos/200/300" alt="social">
+                        <h3>insta</h3>
                     </a>
                 </li>
-                <p class="footer-copy"></p>
             </ul>
+            <p class="footer-copy">Copyright 2024&copy;</p>
         </footer>
     </div>
+
+    <script src="./js/home.js"></script>
 </body>
 </html>
