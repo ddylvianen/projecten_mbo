@@ -19,8 +19,8 @@ def game_list(req):
 def faq(req):
     return render(req, "game/faq.html")
 
-def contact(req):
-    return render(req, "game/contact.html")
+def aboutus(req):
+    return render(req, "game/aboutus.html")
 
 def game(req, id):
     game = Game.objects.get(id=id)
