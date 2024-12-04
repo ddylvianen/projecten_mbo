@@ -1,0 +1,46 @@
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .container {
+    display: flex;
+    gap: 20px; /* Ruimte tussen de elementen */
+    align-items: flex-start; /* Lijn de items uit aan de bovenkant */
+    justify-content: flex-start; /* Zorg dat de items aan de linkerzijde beginnen */
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    width: 100%;
+  }
+  
+  .container img {
+    width: 500px; /* Stel een specifieke breedte in voor de afbeelding */
+    height: auto; 
+    border-radius: 8px;
+  }
+  
+  .container-info {
+    display: flex;
+    flex-direction: column; /* Zorg ervoor dat de tekst en video onder elkaar staan in de container */
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 650px; /* Stel een maximale breedte in voor de tekst en video container */
+  }
+  
+  iframe {
+    width: 560px;  /* Breedte van de video */
+    height: 315px;  /* Hoogte van de video */
+    margin-top: 20px; /* Voeg ruimte toe tussen de tekst en de video */
+  }
+  
