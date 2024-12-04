@@ -1,0 +1,36 @@
+.main-cont{
+    .faq-cont{
+        .faq-title{
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .faq-item{
+            display: grid;
+            grid-template-columns: 9fr 1fr;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+
+            .faq-question{
+                font-size: 1.125rem; // 18px
+                font-weight: 700;
+                color: #000;
+                margin-bottom: 10px;
+            }
+            .faq-answer{
+                display: none;
+                font-size: 1rem; // 16px
+                color: #000;
+                text-align: center;
+                padding: 1rem 0;
+            }
+            .faq-answer.visible{
+                display: unset;
+            }   
+        }
+    }
+}
