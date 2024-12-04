@@ -1,0 +1,35 @@
+{% extends 'game/base.html' %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="action-cont" style="background-image: url('{{imgurl}}{{calltoaction.img}}')">
+        <div class="slidehero-cont">
+            <h1>New game</h1>
+            <button>View More</button>
+        </div>
+    </section>
+    <section class="viewmore-cont">
+        <div class="game-list-cont">
+            <div>
+                <h2>More Games</h2>
+                <a href="/game_list">
+                    <h4>Show More</h4>
+                </a>
+            </div>
+            <ul class="flex-cont game-list">
+                {% for game in games %}
+                    <li class="game-item">
+                        <a href="game/{{game.id}}">
+                            <img src="{{imgurl}}{{game.img}}" alt="game poster of {{game.title}}" class="game-img">
+                            {% comment %} <h3>{{game.title}}</h3> {% endcomment %}
+                            {% comment %} <p>Maker: {{game.maker}}</p> {% endcomment %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

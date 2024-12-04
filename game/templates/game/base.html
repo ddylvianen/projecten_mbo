@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/svg+xml" href="{% static '/logo.svg' %}">
+    
+
+    <link rel="stylesheet" href="{% static '/css/template.css' %}">
+    {% block extra_css %}
+    {% endblock extra_css %}
+</head>
+<body>
+    <div class="cont">
+        <nav class="flex-cont nav">
+            <div class="logo-cont">
+                <img src="{% static './logo.svg' %}" alt="logo" class="nav-img">
+                <h1>Ubisoft</h1>
+            </div>
+            <button id="button">drop</button>
+            <ul class="flex-cont link-cont" id="dropdown">
+                <li class="link-item"><a href='{% url "home" %}'>Home</a></li>
+                <li class="link-item"><a href='{% url "game_list" %}'>Game list</a></li>
+                <li class="link-item"><a href='{% url "contact" %}'>Contact</a></li>
+                <li class="link-item"><a href='{% url "faq" %}'>FAQ</a></li>
+            </ul>
+        </nav>
+        <main class="main-cont">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="flex-cont footer">
+            <ul class="flex-cont social-container">
+                <li class="social-item-cont">
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        <i class="fa-brands fa-twitter"></i>
+                        <h3>twitter</h3>
+                    </a>
+                </li>
+                <li class="social-item-cont">
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <h3>instagram</h3>
+                    </a>
+                </li>
+                <li class="social-item-cont">
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <h3>linkedin</h3>
+                    </a>
+                </li>
+                <li class="social-item-cont">
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        <i class="fa-brands fa-facebook"></i>
+                        <h3>facebook</h3>
+                    </a>
+                </li>
+            </ul>
+            <p class="footer-copy">Copyright 2024&copy;</p>
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/03deb1591a.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'game/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/css/gamelist.css' %}">
+{% endblock extra_css %}
+
+{% block content %}  
+<div class="Afbeeldingen-cont">
+    
+    {% for game in games %}
+        <a href="game/{{game.id}}" class="afbeelingen">
+            <img src="{{imgurl}}{{game.img}}"
+                alt="game poster of {{game.title}}">
+            <!-- <figcaption>Far Cry 6</figcaption> -->
+            <p class="img-text">Maker: {{game.maker}}</p>
+        </a>
+    {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+django
+pillow
+django_static_jquery3
+django_browser_reload
+django_compressor
+
