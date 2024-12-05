@@ -1,0 +1,50 @@
+h1 {
+    color: grey;
+    width: 95px;
+}
+
+.Afbeeldingen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 80%;
+    justify-content: left;
+    text-decoration: none;
+    color: inherit; 
+}
+
+.Afbeeldingen img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Afbeeldingen-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+figcaption {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.img-text{
+    text-decoration: none;
+}

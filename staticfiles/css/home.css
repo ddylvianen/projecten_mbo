@@ -1,0 +1,98 @@
+.main-cont .action-cont {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+  width: 90vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-color: #ff0000; */
+  background-size: cover;
+  border-radius: 25px;
+}
+.main-cont .action-cont .slidehero-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+  gap: 1.5rem;
+}
+.main-cont .action-cont .slidehero-cont h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+}
+.main-cont .action-cont .slidehero-cont button {
+  padding: 0.75rem 2.5rem;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  font-size: 1.5rem;
+  font-weight: 5000;
+  font-style: oblique;
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  border: none;
+}
+.main-cont .action-cont .slidehero-cont button:hover {
+  background-color: #e0e0e0;
+}
+.main-cont .viewmore-cont {
+  width: 80vw;
+}
+.main-cont .viewmore-cont .game-list-cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+}
+.main-cont .viewmore-cont .game-list-cont div {
+  padding: 0 1.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.main-cont .viewmore-cont .game-list-cont .game-list {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.main-cont .viewmore-cont .game-list-cont .game-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-cont .viewmore-cont .game-list-cont .game-item .game-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 25px;
+}
+.main-cont .viewmore-cont .game-list-cont .game-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.main-cont .viewmore-cont .game-list-cont .game-item p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.main-cont .viewmore-cont .game-list-cont .game-item button {
+  padding: 0.75rem 2.5rem;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  font-size: 1.5rem;
+  font-weight: 5000;
+  font-style: oblique;
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  border: none;
+}
+.main-cont .viewmore-cont .game-list-cont .game-item button:hover {
+  background-color: #e0e0e0;
+}
+
+/*# sourceMappingURL=home.css.map */
