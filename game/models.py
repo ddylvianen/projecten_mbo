@@ -7,7 +7,7 @@ from compressed_image_field import CompressedImageField
 class Game(models.Model):
     title = models.CharField(max_length=50)
     maker = models.CharField(max_length=50)
-    img = CompressedImageField(null=True, upload_to='profiles', default='default_profile.jpg', quality=60)
+    img = CompressedImageField(null=True, upload_to='profiles', default='default_profile.jpg', quality=80)
     date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
