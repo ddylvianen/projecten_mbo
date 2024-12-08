@@ -8,16 +8,37 @@ html {
   font-size: clamp(16px, 2.5vw, 18px);
 }
 
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the track */
+  border-radius: 10px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar */
+  border-radius: 10px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovered */
+}
+
+.cont {
+  padding: 10px;
+  padding-top: 0;
+}
 .cont,
 .cont .main-cont {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
 }
 .cont {
-  gap: 5rem;
   min-height: 100vh;
   max-width: 100vw;
   background-color: #f1f1f1;
@@ -26,7 +47,6 @@ html {
 .cont main,
 .cont footer {
   width: 100%;
-  padding: 10px 25px;
 }
 
 .flex-cont {
@@ -54,12 +74,9 @@ html {
   gap: 1rem;
 }
 .nav .link-cont .link-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: aqua;
-  width: clamp(120px, 10vw, 150px);
-  height: 50px;
+  width: clamp(100px, 10vw, 120px);
+  height: 40px;
   text-align: center;
   border-radius: 25px;
 }
@@ -70,10 +87,62 @@ html {
   background-color: #e0e0e0;
 }
 .nav .link-cont .link-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: black;
   font-size: 1.1rem;
   font-weight: 200;
+}
+.nav .authencator-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+.nav .authencator-cont .authencator-item {
+  width: clamp(50px, 10vw, 80px);
+  height: 40px;
+  border-radius: 25px;
+}
+.nav .authencator-cont .authencator-item a {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  text-align: end;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+.nav .authencator-cont .authencator-profile .profile-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav .authencator-cont .authencator-profile .profile-cont {
+  text-decoration: none;
+}
+.nav .authencator-cont .authencator-profile .profile-cont .authencator-profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+.nav .authencator-cont .authencator-profile .profile-cont .profile-heading {
+  font-size: 1.1rem;
+  font-weight: 200;
+  color: black;
 }
 
 #button {

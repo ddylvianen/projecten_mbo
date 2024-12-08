@@ -1,0 +1,121 @@
+
+.main-cont {
+    .action-cont {
+        &{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            height: 70vh;
+            width: 90vw;
+            background-color: #ff0000;
+            background-size: cover;
+            border-radius: 25px;
+        }
+
+        .slidehero-cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5%;
+            gap: 1.50rem;
+
+            h2 {
+                font-size: 3rem;
+                font-weight: 700;
+                color: white;
+            }
+
+            button {
+
+                padding: .75rem 2.50rem;
+                border-radius: 25px;
+                background-color: #f1f1f1;
+                font-size: 1.50rem;
+                font-weight: 5000;
+                font-style: oblique;
+                font-family: 'Courier New', Courier, monospace;
+                color: black;
+                border: none;
+
+                &:hover {
+                    background-color: #e0e0e0;
+                }
+            }
+        }
+    }
+
+    .viewmore-cont {
+        &{width: 80vw;}
+
+        .game-list-cont {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 2rem;
+
+
+            div{
+                padding: 0 1.25rem;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+            }
+            .game-list{
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 3rem;
+
+                // &:last-child{
+                //     justify-self: start;
+                // }
+            }
+            .game-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .game-img {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 25px;
+                }
+
+                h3 {
+                    font-size: 1.50rem;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+
+                button {
+                    padding: .75rem 2.50rem;
+                    border-radius: 25px;
+                    background-color: #f1f1f1;
+                    font-size: 1.50rem;
+                    font-weight: 5000;
+                    font-style: oblique;
+                    font-family: 'Courier New', Courier, monospace;
+                    color: black;
+                    border: none;
+
+                    &:hover {
+                        background-color: #e0e0e0;
+                    }
+                }
+            }
+
+            // .fl-grow{
+            //     flex-grow: 1;
+            // }
+        }
+    }
+
+}

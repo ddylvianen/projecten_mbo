@@ -5,10 +5,7 @@
   flex-direction: column;
   height: 70vh;
   width: 90vw;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  /* background-color: #ff0000; */
+  background-color: #ff0000;
   background-size: cover;
   border-radius: 25px;
 }
@@ -19,11 +16,15 @@
   align-items: center;
   margin-bottom: 5%;
   gap: 1.5rem;
+  object-fit: cover;
+  background-position: bottom;
 }
-.main-cont .action-cont .slidehero-cont h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: white;
+.main-cont .action-cont .slidehero-cont h1 {
+  font-size: 4.5rem;
+  font-weight: 1000;
+  font-style: oblique;
+  text-transform: uppercase;
+  color: black;
 }
 .main-cont .action-cont .slidehero-cont button {
   padding: 0.75rem 2.5rem;

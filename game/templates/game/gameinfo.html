@@ -9,6 +9,26 @@
 
 
 {% block content %}
-    
+<sevtion class="container">
+    <img src="{{imgurl}}{{game.img}}" alt="Far Cry 6">
+    <div class="container-info"> 
+        <h1>{{game.title}}</h1>
+        <strong><p>
+            Far Cry 6 is a first-person shooter set on the tropical island of Yara, 
+            a vibrant yet dangerous world inspired by Cuba. You play as Dani Rojas, 
+            a guerrilla fighter leading a revolution against the brutal dictator Antón Castillo, 
+            voiced by Giancarlo Esposito. The game offers a vast open world to explore, 
+            from lush jungles to sprawling cities, with customizable weapons, unique vehicles.
+        </p></strong> {% comment %} add to db {% endcomment %}
+        
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/-IJuKT1mHO8?si=nRLxDwt0mVamjuFP" 
+        frameborder="0" 
+        allowfullscreen>
+        </iframe>
+    </div>
+</section>
 {% endblock content %}
     

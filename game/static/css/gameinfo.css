@@ -1,4 +1,8 @@
 /* Algemene stijlen */
+
+.cont{
+  gap: 0;
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -25,7 +29,7 @@ body {
   }
   
   .container img {
-    width: 500px; /* Stel een specifieke breedte in voor de afbeelding */
+    width: 450px; /* Stel een specifieke breedte in voor de afbeelding */
     height: auto; 
     border-radius: 8px;
   }

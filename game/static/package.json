@@ -1,0 +1,20 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss:css",
+    "minify": "sass --style=compressed scss:css",
+    "start-env": "../../../django/Scripts/activate",
+    "dev": "concurrently \"npm run sass\" \"py ../../manage.py runserver\""
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.0",
+    "sass": "^1.82.0"
+  }
+}

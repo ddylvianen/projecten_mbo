@@ -22,11 +22,26 @@
             </div>
             <button id="button">drop</button>
             <ul class="flex-cont link-cont" id="dropdown">
-                <li class="link-item"><a href='{% url "home" %}'>Home</a></li>
-                <li class="link-item"><a href='{% url "game_list" %}'>Game list</a></li>
-                <li class="link-item"><a href='{% url "aboutus" %}'>about us</a></li>
-                <li class="link-item"><a href='{% url "faq" %}'>FAQ</a></li>
+                <li class="link-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="link-item"><a href="{% url 'game_list' %}">Game list</a></li>
+                <li class="link-item"><a href="{% url 'aboutus' %}">about us</a></li>
+                <li class="link-item"><a href="{% url 'faq' %}">FAQ</a></li>
+
+                {% comment %} if logged in as role {% endcomment %}
+                {% comment %} <li class="link-item"><a href='{% url "admin" %}'>Admin</a></li>
+                <li class="link-item"><a href='{% url "ticket" %}'>Tickets</a></li> {% endcomment %}
             </ul>
+                <ul class="authencator-cont">
+                    <li class="authencator-item"><a href='{% url "login" %}'>Login</a></li>
+                    <li class="authencator-item"><a href='{% url "register" %}'>Register</a></li>
+
+                    {% comment %} <li class="authencator-profile">
+                        <a href="{% url 'profile' %}" class="profile-cont">
+                            <img src="https://picsum.photos/200" alt="placehold" class="authencator-profile-img">
+                            <h3 class="profile-heading">ddylvianen</h3>
+                        </a>
+                    </li> {% endcomment %}
+                </ul>
         </nav>
         <main class="main-cont">
             {% block content %}
