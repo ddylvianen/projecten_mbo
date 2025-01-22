@@ -21,16 +21,20 @@
                 <img src="{% static './logo.svg' %}" alt="logo" class="nav-img">
                 <h1>Ubisoft</h1>
             </div>
-            <button id="button">drop</button>
+            <i class="fa-solid fa-bars" id="button"></i>
             <ul class="flex-cont link-cont" id="dropdown">
                 <li class="link-item"><a href="{% url 'home' %}">Home</a></li>
                 <li class="link-item"><a href="{% url 'game_list' %}">Game list</a></li>
                 <li class="link-item"><a href="{% url 'aboutus' %}">about us</a></li>
                 <li class="link-item"><a href="{% url 'faq' %}">FAQ</a></li>
+                {% if user.is_authenticated %}
+                    <li id='logout' class="link-item hide"><a href="{% url 'logout' %}">Logout</a></li>
+                {% endif %}
+                
             </ul>
             <ul class="authencator-cont">
                     {% if user.is_authenticated %}
-                        <li class="authencator-item"><a href="{% url 'logout' %}">Logout</a></li>
+                        <li id='logout' class="authencator-item"><a href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
                         <li class="authencator-item"><a href="{% url 'login' %}">Login</a></li>
                         <li class="authencator-item"><a href="{% url 'register' %}">Register</a></li>
@@ -48,25 +52,21 @@
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <i class="fa-brands fa-twitter"></i>
-                        <h3>twitter</h3>
                     </a>
                 </li>
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <i class="fa-brands fa-instagram"></i>
-                        <h3>instagram</h3>
                     </a>
                 </li>
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <i class="fa-brands fa-linkedin"></i>
-                        <h3>linkedin</h3>
                     </a>
                 </li>
                 <li class="social-item-cont">
                     <a href="https://picsum.photos/200/300" class="social-item">
                         <i class="fa-brands fa-facebook"></i>
-                        <h3>facebook</h3>
                     </a>
                 </li>
             </ul>

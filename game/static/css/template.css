@@ -155,9 +155,14 @@ html {
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   #button {
     display: unset;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    height: 50%;
+    align-self: center;
   }
   .nav {
     flex-wrap: wrap;
@@ -179,6 +184,9 @@ html {
     grid-auto-columns: 100%;
     gap: 1rem;
   }
+  .nav .authencator-cont {
+    display: none;
+  }
 }
 .footer {
   align-self: flex-end;
@@ -187,7 +195,7 @@ html {
 }
 .footer .social-container {
   align-items: flex-end;
-  gap: 1.5rem;
+  gap: 25%;
 }
 .footer .social-container .social-item-cont {
   display: flex;
@@ -197,7 +205,7 @@ html {
 .footer .social-container .social-item-cont .social-item {
   text-decoration: none;
   color: black;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 5vw, 1.5rem);
   font-weight: 500;
 }
 .footer .social-container .social-item-cont img {
@@ -206,9 +214,17 @@ html {
   border-radius: 25px;
 }
 .footer .social-container .social-item-cont h3 {
-  font-size: 0.75rem;
+  font-size: 0.55rem;
   text-align: center;
   font-weight: 400;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  margin-top: clamp(1rem, 5vw, 2rem);
+  font-weight: 200;
+  color: black;
+  text-align: center;
 }
 
 .messages {
@@ -233,6 +249,10 @@ html {
 .messages li:hover {
   opacity: 0.8;
   transform: translateY(-2px);
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=template.css.map */

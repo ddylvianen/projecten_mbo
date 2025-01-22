@@ -27,7 +27,7 @@
             }
 
             h1 {
-                font-size: 4.5rem;
+                font-size: clamp(2rem, 10vw, 4.5rem);
                 font-weight: 1000;
                 font-style: oblique;
                 text-transform: uppercase;
@@ -70,6 +70,31 @@
                 justify-content: space-between;
                 align-items: center;
                 gap: 2rem;
+
+                h2 {
+                    font-size: 2rem;
+                    font-weight: 1000;
+                    font-style: oblique;
+                    text-transform: uppercase;
+                    color: black;
+                }
+
+                a {
+                    text-decoration: none;
+                    padding: .75rem 2.50rem;
+                    border-radius: 25px;
+                    background-color: #f1f1f1;
+                    font-size: 1.50rem;
+                    font-weight: 5000;
+                    font-style: oblique;
+                    font-family: 'Courier New', Courier, monospace;
+                    color: black;
+                    border: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
             .game-list{
                 flex-wrap: wrap;

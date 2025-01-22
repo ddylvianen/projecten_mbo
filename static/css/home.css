@@ -30,7 +30,7 @@ html {
   background-position: bottom;
 }
 .main-cont .action-cont .slidehero-cont h1 {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 10vw, 4.5rem);
   font-weight: 1000;
   font-style: oblique;
   text-transform: uppercase;
@@ -67,6 +67,28 @@ html {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+}
+.main-cont .viewmore-cont .game-list-cont div h2 {
+  font-size: 2rem;
+  font-weight: 1000;
+  font-style: oblique;
+  text-transform: uppercase;
+  color: black;
+}
+.main-cont .viewmore-cont .game-list-cont div a {
+  text-decoration: none;
+  padding: 0.75rem 2.5rem;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  font-size: 1.5rem;
+  font-weight: 5000;
+  font-style: oblique;
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  border: none;
+}
+.main-cont .viewmore-cont .game-list-cont div a:hover {
+  text-decoration: underline;
 }
 .main-cont .viewmore-cont .game-list-cont .game-list {
   flex-wrap: wrap;
