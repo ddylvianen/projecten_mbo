@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Aanvraag</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="{% static '/logo.svg' %}">
+    <script src="https://kit.fontawesome.com/03deb1591a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="flex-cont nav">
+            <div class="logo-cont">
+                <img src="{% static './logo.svg' %}" alt="logo" class="nav-img">
+                <h1 class="logo-title">Ubisoft</h1>
+            </div>
+            <ul class="nav-links">
+                <a href="{% url 'home' %}" class="header-button">Home</a></li>
+                <a href="{% url 'game_list' %}" class="header-button">Game list</a>
+                <a href="{% url 'aboutus' %}" class="header-button">About us</a>
+                <a href="{% url 'faq' %}" class="header-button">FAQ</a>
+            </ul>
+        </nav>
+   
+    </header>
+    <main>
+        <div class="info-container">
+            <h1>Hoe werkt het?</h1>
+            <p>
+                Via dit formulier kunt u een aanvraag indienen om een review over een specifieke game te laten maken.
+                Wij bekijken uw aanvraag en proberen zo snel mogelijk aan uw verzoek te voldoen. Houd er rekening mee
+                dat het verwerken van uw aanvraag gemiddeld 3 werkdagen kan duren.
+            </p>
+        </div>
+
+        <form class="review-form" id="reviewForm">
+            <h2>Vraag een review aan!</h2>
+            <label for="gameName">Naam van de game:</label>
+            <input type="text" id="gameName" name="gameName">
+            <div id="gameNameError" style="display: none; color: #e63946; font-size: 0.9rem;"></div>
+
+            <label for="reason">Waarom is dit je favoriete game?</label>
+            <textarea id="reason" name="reason"></textarea>
+            <div id="reasonError" style="display: none; color: #e63946; font-size: 0.9rem;"></div>
+
+
+            <button type="submit">Verstuur aanvraag</button>
+
+            <p class="success-message" id="successMessage">Uw aanvraag is succesvol verzonden!</p>
+            <p class="error-message" id="errorMessage">Vul alstublieft alle velden in!</p>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <ul class="flex-cont social-container">
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        <i class="fa-brands fa-twitter"></i>
+                        <h3>Twitter</h3>
+                    </a>
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        
+                        <i class="fa-brands fa-instagram"></i>
+                        <h3>Instagram</h3>
+                    </a>
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                    </a>
+                    <a href="https://picsum.photos/200/300" class="social-item">
+                        <i class="fa-brands fa-facebook"></i>
+                        <h3>Facebook</h3>
+                    </a>
+            </ul>
+            <p class="footer-copy">Copyright 2024&copy;</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
