@@ -14,6 +14,7 @@
     {% endblock extra_css %}
 </head>
 <body>
+
     <div class="cont">
         <nav class="flex-cont nav">
             <div class="logo-cont">
@@ -26,22 +27,17 @@
                 <li class="link-item"><a href="{% url 'game_list' %}">Game list</a></li>
                 <li class="link-item"><a href="{% url 'aboutus' %}">about us</a></li>
                 <li class="link-item"><a href="{% url 'faq' %}">FAQ</a></li>
-
-                {% comment %} if logged in as role {% endcomment %}
-                {% comment %} <li class="link-item"><a href='{% url "admin" %}'>Admin</a></li>
-                <li class="link-item"><a href='{% url "ticket" %}'>Tickets</a></li> {% endcomment %}
             </ul>
-                <ul class="authencator-cont">
-                    <li class="authencator-item"><a href='{% url "login" %}'>Login</a></li>
-                    <li class="authencator-item"><a href='{% url "register" %}'>Register</a></li>
+            <ul class="authencator-cont">
+                    {% if user.is_authenticated %}
+                        <li class="authencator-item"><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li class="authencator-item"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="authencator-item"><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
 
-                    {% comment %} <li class="authencator-profile">
-                        <a href="{% url 'profile' %}" class="profile-cont">
-                            <img src="https://picsum.photos/200" alt="placehold" class="authencator-profile-img">
-                            <h3 class="profile-heading">ddylvianen</h3>
-                        </a>
-                    </li> {% endcomment %}
-                </ul>
+                    
+            </ul>
         </nav>
         <main class="main-cont">
             {% block content %}
@@ -76,6 +72,14 @@
             </ul>
             <p class="footer-copy">Copyright 2024&copy;</p>
         </footer>
+
+        {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
     </div>
     <script src="https://kit.fontawesome.com/03deb1591a.js" crossorigin="anonymous"></script>
 

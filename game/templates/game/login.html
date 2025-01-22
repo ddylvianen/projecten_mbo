@@ -1,0 +1,25 @@
+{% extends 'game/base.html' %}
+{% load static %}
+{% block extra_css %}
+
+  <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+{% endblock extra_css %}
+  
+
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+
+
+    {% csrf_token %}
+    
+    {% for field in form %}
+      {{ field }}
+    {% endfor %}
+    <a href="" class="forgot-passw"></a>
+    <a href="" class="signup"></a>
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
+  </form>
+{% endblock %}

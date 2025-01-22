@@ -1,0 +1,37 @@
+<!-- templates/registration/signup.html -->
+{% extends 'game/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+{% endblock extra_css %}
+
+{% block title %}
+  Sign Up
+{% endblock %}
+
+{% block content %}
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      {{field}}
+      {% for error in field.errors %}
+        <p class="error">• {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+
+    
+      
+    <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+    
+    <button type="submit">Sign Up</button>
+  </form>
+{% endblock %}
+
+  
+
+{% comment %} Your password can’t be too similar to your other personal information.
+Your password must contain at least 8 characters.
+Your password can’t be a commonly used password.
+Your password can’t be entirely numeric. {% endcomment %}

@@ -8,7 +8,7 @@
     <section class="action-cont" style="background-image: url('{{imgurl}}{{calltoaction.img}}')">
         <div class="slidehero-cont">
             <h1>{{calltoaction.title}}</h1> {% comment %} make header other color and change font size {% endcomment %}  
-            <button>View More</button>
+            <a href="{% url 'game' calltoaction.id %}">View More</a>
         </div>
     </section>
     <section class="viewmore-cont">

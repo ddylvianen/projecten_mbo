@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+
 .main-cont .action-cont {
   display: flex;
   justify-content: flex-end;
@@ -5,10 +15,7 @@
   flex-direction: column;
   height: 70vh;
   width: 90vw;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  /* background-color: #ff0000; */
+  background-color: #ff0000;
   background-size: cover;
   border-radius: 25px;
 }
@@ -19,13 +26,18 @@
   align-items: center;
   margin-bottom: 5%;
   gap: 1.5rem;
+  object-fit: cover;
+  background-position: bottom;
 }
-.main-cont .action-cont .slidehero-cont h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: white;
+.main-cont .action-cont .slidehero-cont h1 {
+  font-size: 4.5rem;
+  font-weight: 1000;
+  font-style: oblique;
+  text-transform: uppercase;
+  color: black;
 }
-.main-cont .action-cont .slidehero-cont button {
+.main-cont .action-cont .slidehero-cont a {
+  text-decoration: none;
   padding: 0.75rem 2.5rem;
   border-radius: 25px;
   background-color: #f1f1f1;
@@ -36,7 +48,7 @@
   color: black;
   border: none;
 }
-.main-cont .action-cont .slidehero-cont button:hover {
+.main-cont .action-cont .slidehero-cont a:hover {
   background-color: #e0e0e0;
 }
 .main-cont .viewmore-cont {

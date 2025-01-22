@@ -1,12 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: clamp(16px, 2.5vw, 18px);
-}
+@use 'var' as *;
+@use 'sass:color';
 
 
 ::-webkit-scrollbar {
@@ -28,8 +21,11 @@ html {
 }
 
 .cont {
-    padding: 10px;
-    padding-top: 0;
+    &{
+        padding: 10px;
+        padding-top: 0;
+    }
+
     &,
     .main-cont {
         display: flex;
@@ -49,7 +45,7 @@ html {
     main,
     footer {
         width: 100%;
-        // padding: 10px 25px;
+        padding: 10px 25px;
     }
 }
 
@@ -76,31 +72,23 @@ html {
     }
 
     .link-cont {
-        justify-content: space-between;
-
-        // width: 40%;
-        // height: 100%;
-        align-items: center;
-        list-style: none;
-        margin-right: 2.5%;
-        gap: 1rem;
+        &{
+            justify-content: space-between;
+            // width: 40%;
+            // height: 100%;
+            align-items: center;
+            list-style: none;
+            margin-right: 2.5%;
+            gap: 1rem;
+        }
 
 
         .link-item {
-            background-color: aqua;
+            background-color: $primary-color;
             width: clamp(100px, 10vw, 120px);
             height: 40px;
             text-align: center;
             border-radius: 25px;
-
-            &:active {
-                background-color: #f1f1f1;
-            }
-
-            &:hover {
-                background-color: #e0e0e0;
-            }
-
 
             a {
                 display: flex;
@@ -114,29 +102,32 @@ html {
                 color: black;
                 font-size: 1.10rem;
                 font-weight: 200;
+                border-radius: 25px;
+                &:hover {
+                    background-color: color.adjust($color: $primary-color, $lightness: -10%);
+                }
+
+                &:active {
+                    background-color: color.adjust($color: $primary-color, $lightness: 10%);
+                }
             }
         }
     }
 
     .authencator-cont {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: .5rem;
-        list-style: none;
+        &{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .5rem;
+            list-style: none;
+        }
         .authencator-item {
             width: clamp(50px, 10vw, 80px);
             height: 40px;
             border-radius: 25px;
 
-            // &:active {
-            //     background-color: #f1f1f1;
-            // }
-
-            // &:hover {
-            //     background-color: #e0e0e0;
-            // }
-
+        
             a {
                 display: flex;
                 justify-content: center;
@@ -148,6 +139,10 @@ html {
                 color: black;
                 font-size: 1.10rem;
                 font-weight: 200;
+                color: $secondary-color;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -255,6 +250,32 @@ html {
                 text-align: center;
                 font-weight: 400;
             }
+        }
+    }
+}
+
+
+// Message popup styling
+.messages {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        background-color: $primary-color;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        &:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
         }
     }
 }
