@@ -27,30 +27,32 @@
    
     </header>
     <main>
-        <div class="info-container">
-            <h1>Hoe werkt het?</h1>
-            <p>
-                Via dit formulier kunt u een aanvraag indienen om een review over een specifieke game te laten maken.
-                Wij bekijken uw aanvraag en proberen zo snel mogelijk aan uw verzoek te voldoen. Houd er rekening mee
-                dat het verwerken van uw aanvraag gemiddeld 3 werkdagen kan duren.
-            </p>
+        <div class="Review">
+            <div class="info-container">
+                <h1>Hoe werkt het?</h1>
+                <p>
+                    Via dit formulier kunt u een aanvraag indienen om een review over een specifieke game te laten maken.
+                    Wij bekijken uw aanvraag en proberen zo snel mogelijk aan uw verzoek te voldoen. Houd er rekening mee
+                    dat het verwerken van uw aanvraag gemiddeld 3 werkdagen kan duren.
+                </p>
+            </div>
+            <form class="review-form" id="reviewForm">
+                <h2>Vraag een review aan!</h2>
+                <label for="gameName">Naam van de game:</label>
+                <input type="text" id="gameName" name="gameName" required>
+                <div id="gameNameError" style="display: none; color: #e63946; font-size: 0.9rem;"></div>
+    
+                <label for="reason">Wat wil je weten van de game?</label>
+                <textarea id="reason" name="reason" required></textarea>
+                <div id="reasonError" style="display: none; color: #e63946; font-size: 0.9rem;"></div>
+    
+    
+                <button type="submit">Verstuur aanvraag</button>
+    
+                <p class="success-message" id="successMessage">Uw aanvraag is succesvol verzonden!</p>
+                <p class="error-message" id="errorMessage">Vul alstublieft alle velden in!</p>
+            </form>
         </div>
-
-        <form class="review-form" id="reviewForm">
-            <h2>Vraag een review aan!</h2>
-            <label for="gameName">Naam van de game:</label>
-            <input type="text" id="gameName" name="gameName" required>
-            <div id="gameNameError" style="display: none; color: #e63946; font-size: 0.9rem;"></div>
-
-            <label for="reason">Wat wil je weten over de game?</label>
-            <textarea id="reason" name="reason"></textarea>
-            <div id="reasonError" style="display: none; color: #e63946; font-size: 0.9rem;"></div>
-
-
-            <button type="submit">Verstuur aanvraag</button>
-
-            <p class="success-message">sdfasf</p>
-        </form>
     </main>
 
     <footer>
@@ -77,8 +79,6 @@
             <p class="footer-copy">Copyright 2024&copy;</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
