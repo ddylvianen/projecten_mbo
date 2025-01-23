@@ -70,21 +70,20 @@
                     </a>
                 </li>
             </ul>
-            <p class="footer-copy">Copyright 2024&copy;</p>
+            <p class="footer-copy">&copy;2024</p>
         </footer>
-
         {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
     <script src="https://kit.fontawesome.com/03deb1591a.js" crossorigin="anonymous"></script>
 
     {% block javascript %}
     {% endblock javascript %}
-    <script src="{% static '/js/home.js' %}"></script>
+    <script src="{% static '/js/template.js' %}"></script>
 </body>
 </html>

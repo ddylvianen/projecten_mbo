@@ -1,32 +1,40 @@
-<!-- templates/registration/signup.html -->
-{% extends 'game/base.html' %}
 {% load static %}
-
-{% block extra_css %}
+  
+<head>
+  <title>ubisoft</title>
+  <link rel="stylesheet" href="{% static '/css/template.css' %}">
   <link rel="stylesheet" href="{% static '/css/forms.css' %}">
-{% endblock extra_css %}
+</head>
 
-{% block title %}
-  Sign Up
-{% endblock %}
-
-{% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      {{field}}
-      {% for error in field.errors %}
-        <p class="error">• {{ error }}</p>
-      {% endfor %}
-    {% endfor %}
-
+<body>
+  <div class="cont">
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <main class="main-cont">
+      <h2>Sign up</h2>
+      <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          {{field}}
+          {% for error in field.errors %}
+            <p class="error">• {{ error }}</p>
+          {% endfor %}
+        {% endfor %}
     
-    <button type="submit" class="form-btn">Sign Up</button>
-
-    <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
-  </form>
-{% endblock %}
+        
+        <button type="submit" class="form-btn">Sign Up</button>
+    
+        <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+      </form>
+    </main>
+  </div>
+  <script src="{% static '/js/template.js' %}"></script>
+</body>
 
   
 

@@ -33,20 +33,21 @@ def game(req, id):
     reviews = Review.objects.filter(game=game)
     return render(req, "game/gameinfo.html", {'game': game, 'reviews': reviews, 'imgurl': '/media/'})
 
-def login_user(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
+def login_user(req):
+    if req.method == 'POST':
+        form = LoginForm(req.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
             if user is not None:
-                login(request, user)
+                login(req, user)
+                messages.success(req, 'Logged in successfully!');
                 return redirect('home')  # redirect to a custom URL or view
     else:
         form = LoginForm()
 
-    return render(request, 'game/login.html', {'form': form})
+    return render(req, 'game/login.html', {'form': form})
 
 def register(req):
     form_class = CustomUserCreationForm
@@ -58,7 +59,6 @@ def register(req):
         if form.is_valid():
             form.save()
             # login(req, authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1']))
-            messages.info(req, 'Account created successfully');
             messages.success(req, 'Account created successfully');
             # return redirect(success_url)
             return redirect('login')
@@ -68,12 +68,7 @@ def register(req):
 
 def logout_user(req):
     logout(req)
+    messages.success(req, 'Logged out successfully!');
     return redirect('home')
 
-@login_required(login_url='/login')
-def profile(req):
-    user = User.objects.get(username=req.user)
-
-    print(user)
-    return render(req, 'game/profile.html', {'user': user})
  

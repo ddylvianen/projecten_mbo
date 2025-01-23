@@ -1,15 +1,50 @@
-{% extends 'game/base.html' %}
+{% comment %} {% extends 'game/base.html' %} {% endcomment %}
 {% load static %}
-{% block extra_css %}
+{% comment %} {% block extra_css %}
 
   <link rel="stylesheet" href="{% static '/css/forms.css' %}">
-{% endblock extra_css %}
+{% endblock extra_css %} {% endcomment %}
   
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static '/css/template.css' %}">
+  <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+</head>
 
+<body>
+  <div class="cont">
+    {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+    {% endif %}
+    <main class="main-cont">
+      <h1>Login</h1>
+      <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          {{ field }}
+        {% endfor %}
+        
+        {% for error in form.non_field_errors %}
+          <p class="error login-error">{{ error }}</p>
+        {% endfor %}
+          
+        {% comment %} <p class="error">{{ form.non_field_errors }} {% endcomment %}
 
-{% block content %}
-  <h2>Login</h2>
-  <form method="post">
+        </p>
+        <button type="submit" class="form-btn">Login</button>
+        <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
+      </form>
+    </main>
+  </div>
+  <script src="{% static '/js/template.js' %}"></script>
+</body>
+
+  {% comment %} <h2>Login</h2> {% endcomment %}
+  {% comment %} <form method="post">
 
 
     {% csrf_token %}
@@ -19,5 +54,4 @@
     {% endfor %}
     <button type="submit" class="form-btn">Login</button>
     <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
-  </form>
-{% endblock %}
+  </form> {% endcomment %}
