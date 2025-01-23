@@ -23,7 +23,7 @@ main {
     margin-bottom: 20px;
 }
 
-.info-container {
+.Review .info-container {
     width: 100%;
     max-width: 600px;
     margin: 0 auto 20px;
@@ -57,13 +57,14 @@ main {
     border-radius: 10px;
 }
 
-.review-form {
-    padding: 30px;
+.Review .review-form {
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
     text-align: center;
+    margin: 45px;
 }
 
 .review-form h2 {
@@ -123,13 +124,14 @@ main {
 }
 
 .success-message {
-
+    display: none;
     color: #28a745;
     font-weight: bold;
     margin-top: 15px;
 }
 
 .error-message {
+    display: none;
     color: #e63946;
     font-weight: bold;
     margin-top: 15px;
