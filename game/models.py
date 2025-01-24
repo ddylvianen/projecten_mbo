@@ -18,7 +18,7 @@ class Game(models.Model):
 
 class Review(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
-    rating = models.IntegerField(min_value=1, max_value=5, default=0)
+    rating = models.IntegerField(default=0)
     comment = models.TextField(null=False)
     date = models.DateTimeField(default=timezone.now)
 
@@ -26,16 +26,18 @@ class Review(models.Model):
         return self.game.title + " - " + str(self.rating)
     
 
-class comments:
+class comments(models.Model):
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     comment = models.TextField(null=False)
     date = models.DateTimeField(default=timezone.now)
     def __str__(self):
-        return self.game.title + " - " + str(self.comment)
+        return self.user.username + " - " + self.game.title
     
-class missing_review:
-    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
+class MissingReview(models.Model):
+    game = models.CharField(max_length=50, null=False)
     date = models.DateTimeField(default=timezone.now)
     comment = models.TextField(null=False)
     def __str__(self):
-        return self.game.title + " - " + str(self.date)
+        return self.game + " - " + str(self.date)
+    

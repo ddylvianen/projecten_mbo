@@ -4,4 +4,5 @@ from .models import *
 # Register your models here.
 admin.site.register(Game)
 admin.site.register(Review)
-
+admin.site.register(comments)
+admin.site.register(MissingReview)

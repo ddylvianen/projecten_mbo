@@ -1,0 +1,35 @@
+{% extends 'game/base.html' %}
+{% load static %}
+
+{% block title %}Missing Review{% endblock title %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/css/missing_review.css' %}">
+{% endblock extra_css %}
+    
+
+
+{% block content %}
+    <div class="Review">
+        <div class="info-container">
+            <h1>Hoe werkt het?</h1>
+            <p>
+                Via dit formulier kunt u een aanvraag indienen om een review over een specifieke game te laten maken.
+                Wij bekijken uw aanvraag en proberen zo snel mogelijk aan uw verzoek te voldoen. Houd er rekening mee
+                dat het verwerken van uw aanvraag gemiddeld 3 werkdagen kan duren.
+            </p>
+        </div>
+        <form method="post" class="review-form" id="review-form">
+            {% csrf_token %}
+        
+            {% for field in form %}
+                {{field}}
+            {% endfor %}
+                
+            <button type="submit" class="form-btn">Submit</button>
+        </form>
+
+    </div>
+{% endblock content %}
+    

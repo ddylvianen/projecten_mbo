@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from .forms import LoginForm, CustomUserCreationForm
+from .forms import *
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
 from django.contrib import messages
@@ -42,7 +42,7 @@ def login_user(req):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(req, user)
-                messages.success(req, 'Logged in successfully!');
+                messages.success(req, 'Logged in successfully!')
                 return redirect('home')  # redirect to a custom URL or view
     else:
         form = LoginForm()
@@ -59,7 +59,7 @@ def register(req):
         if form.is_valid():
             form.save()
             # login(req, authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1']))
-            messages.success(req, 'Account created successfully');
+            messages.success(req, 'Account created successfully')
             # return redirect(success_url)
             return redirect('login')
     else:    
@@ -68,7 +68,17 @@ def register(req):
 
 def logout_user(req):
     logout(req)
-    messages.success(req, 'Logged out successfully!');
+    messages.success(req, 'Logged out successfully!')
     return redirect('home')
 
  
+def missing_review(req):
+    if req.method == 'POST':
+        form = ReviewForm(req.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(req, 'Review added successfully')
+            return redirect('home')  # redirect to a custom URL or view
+    else:
+        form = ReviewForm()
+    return render(req, "game/missing_review.html", {'form': form})

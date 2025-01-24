@@ -32,9 +32,6 @@
           <p class="error login-error">{{ error }}</p>
         {% endfor %}
           
-        {% comment %} <p class="error">{{ form.non_field_errors }} {% endcomment %}
-
-        </p>
         <button type="submit" class="form-btn">Login</button>
         <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
       </form>

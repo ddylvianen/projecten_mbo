@@ -4,12 +4,13 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static '/css/gameinfo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/comment.css' %}">
 {% endblock extra_css %}
 
 
 
 {% block content %}
-<sevtion class="container">
+<section class="container">
     <img src="{{imgurl}}{{game.img}}" alt="Far Cry 6">
     <div class="container-info"> 
         <h1 class="heading-text">{{game.title}}</h1>
@@ -21,14 +22,71 @@
             from lush jungles to sprawling cities, with customizable weapons, unique vehicles.
         </p></strong> {% comment %} add to db {% endcomment %}
         
-        <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/-IJuKT1mHO8?si=nRLxDwt0mVamjuFP" 
-        frameborder="0" 
-        allowfullscreen>
-        </iframe>
+        {% if game.title != 'farcry 6' %}
+            <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/-IJuKT1mHO8?si=nRLxDwt0mVamjuFP" 
+            frameborder="0" 
+            allowfullscreen>
+            </iframe>
+        {% endif %}
     </div>
+    
 </section>
+
+<div class="comment-section">
+    <div class="post-comment">
+        <div class="comment-list">
+            <div class="flex">
+                <div class="user">
+                    <div class="user-image"><img class="full-size-img" src="WhatsApp Image 2024-11-08 at 12.48.40_f9a3a6cd.jpg" alt="">
+                    </div>
+                    <div class="user-meta">
+                        <div class="name">Shazney Blinker</div>
+                        <div class="time">10 days ago</div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <div class="click icon">6k<i class="fa fa-thumbs-o-up"></i></div>
+                    <div class="disclick icon"><i class="fa fa-thumbs-o-down"></i></div>
+                    <div class="re-comment">Reply</div>
+                </div>
+            </div>
+            <div class="comment">
+                The game offers a highly satisfying experience, with engaging gameplay and smooth mechanics that
+                keep players hooked from start to finish.
+            </div>
+        </div>
+        <div class="comment-list">
+            <div class="flex">
+                <div class="user">
+                    <div class="user-image"><img class="full-size-img" src="frame_26.jpg" alt=""></div>
+                    <div class="user-meta">
+                        <div class="name">Rhomee Mijnals </div>
+                        <div class="time">a second ago</div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <div class="click icon">340<i class="fa fa-thumbs-o-up"></i></div>
+                    <div class="disclick icon"><i class="fa fa-thumbs-o-down"></i></div>
+                    <div class="re-comment">Reply</div>
+                </div>
+            </div>
+            <div class="comment">
+                Great review! Your analysis of the gameplay and mechanics was clear and helpful. It provides a
+                balanced perspective for anyone considering the game
+            </div>
+        </div>
+        <form action="" class="comment-box">
+            <div class="user">
+                <div class="image"><img class="full-size-img" src="WhatsApp Image 2024-11-08 at 12.48.40_f9a3a6cd.jpg" alt=""></div>
+                <div class="name">Shazney Blinker</div>
+            </div>
+            <textarea name="comment"></textarea>
+            <button class="comment-submit">Comment</button>
+        </form>
+    </div>
+</div>
 {% endblock content %}
     
