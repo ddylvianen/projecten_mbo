@@ -21,17 +21,22 @@ def game_list(req):
     games = Game.objects.all().order_by('-date')
     return render(req, "game/gamelist.html", {'games': games, 'imgurl': '/media/'})
 
+@login_required(login_url='/login')
 def faq(req):
     return render(req, "game/faq.html")
 
+
+@login_required(login_url='/login')
 def aboutus(req):
     return render(req, "game/aboutus.html")
 
-
+@login_required(login_url='/login')
 def game(req, id):
     game = Game.objects.get(id=id)
     reviews = Review.objects.filter(game=game)
     return render(req, "game/gameinfo.html", {'game': game, 'reviews': reviews, 'imgurl': '/media/'})
+
+
 
 def login_user(req):
     if req.method == 'POST':
@@ -48,6 +53,7 @@ def login_user(req):
         form = LoginForm()
 
     return render(req, 'game/login.html', {'form': form})
+
 
 def register(req):
     form_class = CustomUserCreationForm
@@ -71,7 +77,8 @@ def logout_user(req):
     messages.success(req, 'Logged out successfully!')
     return redirect('home')
 
- 
+
+@login_required(login_url='/login')
 def missing_review(req):
     if req.method == 'POST':
         form = ReviewForm(req.POST)

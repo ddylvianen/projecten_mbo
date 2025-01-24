@@ -76,12 +76,27 @@ h2 {
   font-size: 0.75rem;
 }
 
+.login-error {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .form-btn {
   background-color: #3498db;
   padding: 0.75rem 0.5rem;
   font-size: 1.3rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.cont {
+  justify-content: center;
+  align-items: center;
+}
+
+.main-cont {
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=forms.css.map */

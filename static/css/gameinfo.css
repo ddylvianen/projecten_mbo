@@ -27,6 +27,13 @@ body {
     padding: 0 20px;
     width: 100%;
   }
+
+  @media screen and (max-width: 850px) {
+    .container {
+      flex-wrap: wrap;
+      align-items: center; /* Centreer de items horizontaal */
+    }
+  }
   
   .container img {
     width: 450px; /* Stel een specifieke breedte in voor de afbeelding */

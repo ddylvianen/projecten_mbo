@@ -28,7 +28,7 @@ class Review(models.Model):
 
 class comments(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
+    game = models.ForeignKey(Review, on_delete=models.CASCADE, null=False)
     comment = models.TextField(null=False)
     date = models.DateTimeField(default=timezone.now)
     def __str__(self):

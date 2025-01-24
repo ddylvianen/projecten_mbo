@@ -229,7 +229,7 @@ html {
 
 .messages {
   position: fixed;
-  top: 1rem;
+  top: 2rem;
   right: 1rem;
   z-index: 1000;
   list-style: none;
